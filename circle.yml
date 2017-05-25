@@ -13,7 +13,7 @@ jobs:
 
       - run: ([[ ! -d $JAVA_HOME/conf ]] && ln -s $JAVA_HOME/lib $JAVA_HOME/conf)
 
-      - run: mvn package
+      - run: mvn test
 
       - save_cache:
           paths:
