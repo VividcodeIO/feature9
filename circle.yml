@@ -20,4 +20,5 @@ jobs:
             - ~/.m2
           key: circleci-feature9-{{ checksum "pom.xml" }}
 
-
+      - store_test_results:
+        path: target/surefire-reports
