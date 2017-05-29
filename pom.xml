@@ -19,6 +19,7 @@
         <module>collections</module>
         <module>smallchanges</module>
         <module>nashorn</module>
+        <module>stackwalking</module>
     </modules>
 
     <dependencies>
