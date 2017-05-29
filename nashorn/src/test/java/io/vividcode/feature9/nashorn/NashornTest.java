@@ -38,17 +38,33 @@ public class NashornTest {
 
 	@Test
 	public void testIterator() throws Exception {
-		final ScriptObjectMirror result = (ScriptObjectMirror) eval("iterator", null);
+		final ScriptObjectMirror result =
+				(ScriptObjectMirror) eval("iterator", null);
 		assertTrue(result.isArray());
 		assertEquals(10, result.size());
 	}
 
-	private Object eval(final String fileName, final Bindings inputBindings) throws ScriptException {
-		final Bindings bindings = Optional.ofNullable(inputBindings).orElse(new SimpleBindings());
+	@Test
+	public void testFunction() throws Exception {
+		final Object result = eval("function", null);
+		assertEquals(3, result);
+	}
+
+	@Test(expected = RuntimeException.class)
+	public void testClass() throws Exception {
+		final Object result = eval("class", null);
+		assertEquals(314.1592653589793, result);
+	}
+
+	private Object eval(final String fileName, final Bindings inputBindings)
+			throws ScriptException {
+		final Bindings bindings = Optional.ofNullable(inputBindings)
+				.orElse(new SimpleBindings());
 		return this.es6Engine.eval(
-				new InputStreamReader(NashornTest.class.getResourceAsStream(
-						String.format("/%s.js", fileName)
-				)),
+				new InputStreamReader(
+						NashornTest.class.getResourceAsStream(
+								String.format("/%s.js", fileName)
+						)),
 				bindings
 		);
 	}
