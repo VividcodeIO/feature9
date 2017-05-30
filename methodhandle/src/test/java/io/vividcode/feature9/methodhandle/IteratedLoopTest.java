@@ -8,7 +8,7 @@ import java.lang.invoke.MethodType;
 import java.util.Iterator;
 import java.util.List;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class IteratedLoopTest {
 	static int body(final int sum, final String value) {
