@@ -20,6 +20,7 @@
         <module>smallchanges</module>
         <module>nashorn</module>
         <module>stackwalking</module>
+        <module>stream</module>
     </modules>
 
     <dependencies>
