@@ -21,6 +21,7 @@
         <module>nashorn</module>
         <module>stackwalking</module>
         <module>stream</module>
+        <module>io</module>
     </modules>
 
     <dependencies>
