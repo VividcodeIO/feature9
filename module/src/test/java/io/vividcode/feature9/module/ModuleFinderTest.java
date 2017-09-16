@@ -10,11 +10,11 @@ import org.junit.Test;
 
 public class ModuleFinderTest {
 
-	@Test
-	public void testFindModule() throws Exception {
-		final ModuleFinder moduleFinder = ModuleTestSupport.getModuleFinder();
-		assertTrue(moduleFinder.find(ModuleTestSupport.MODULE_NAME).isPresent());
-		final Set<ModuleReference> allModules = moduleFinder.findAll();
-		assertEquals(1, allModules.size());
-	}
+  @Test
+  public void testFindModule() throws Exception {
+    final ModuleFinder moduleFinder = ModuleTestSupport.getModuleFinder();
+    assertTrue(moduleFinder.find(ModuleTestSupport.MODULE_NAME).isPresent());
+    final Set<ModuleReference> allModules = moduleFinder.findAll();
+    assertEquals(1, allModules.size());
+  }
 }

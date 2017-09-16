@@ -13,14 +13,14 @@ import org.junit.Test;
 
 public class ModuleReaderTest {
 
-	@Test
-	public void testModuleReader() throws Exception {
-		final ModuleReference reference = ModuleTestSupport.getModuleReference();
-		assertNotNull(reference);
-		final ModuleReader reader = reference.open();
-		final Optional<ByteBuffer> byteBuffer = reader.read("module-info.class");
-		assertTrue(byteBuffer.isPresent());
-		final ModuleDescriptor descriptor = ModuleDescriptor.read(byteBuffer.get());
-		assertEquals(ModuleTestSupport.MODULE_NAME, descriptor.name());
-	}
+  @Test
+  public void testModuleReader() throws Exception {
+    final ModuleReference reference = ModuleTestSupport.getModuleReference();
+    assertNotNull(reference);
+    final ModuleReader reader = reference.open();
+    final Optional<ByteBuffer> byteBuffer = reader.read("module-info.class");
+    assertTrue(byteBuffer.isPresent());
+    final ModuleDescriptor descriptor = ModuleDescriptor.read(byteBuffer.get());
+    assertEquals(ModuleTestSupport.MODULE_NAME, descriptor.name());
+  }
 }

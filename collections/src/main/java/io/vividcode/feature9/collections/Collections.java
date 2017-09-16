@@ -6,18 +6,19 @@ import java.util.Map;
 import java.util.Set;
 
 public class Collections {
-	public static void main(final String[] args) {
-		List.of();
-		List.of("Hello", "World");
-		List.of(1, 2, 3);
 
-		Set.of(1, 2, 3);
+  public static void main(final String[] args) {
+    List.of();
+    List.of("Hello", "World");
+    List.of(1, 2, 3);
 
-		Map.of("Hello", 1, "World", 2);
+    Set.of(1, 2, 3);
 
-		Map.ofEntries
-				(new AbstractMap.SimpleEntry<>("Hello", 1),
-						new AbstractMap.SimpleEntry<>("World", 2)
-				);
-	}
+    Map.of("Hello", 1, "World", 2);
+
+    Map.ofEntries
+        (new AbstractMap.SimpleEntry<>("Hello", 1),
+            new AbstractMap.SimpleEntry<>("World", 2)
+        );
+  }
 }

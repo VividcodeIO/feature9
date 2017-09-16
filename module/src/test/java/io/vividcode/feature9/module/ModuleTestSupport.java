@@ -7,13 +7,15 @@ import java.nio.file.Paths;
 
 public class ModuleTestSupport {
 
-	public static final String MODULE_NAME = "io.vividcode.store.common";
+  public static final String MODULE_NAME = "io.vividcode.store.common";
 
-	public static ModuleFinder getModuleFinder() throws URISyntaxException {
-		return ModuleFinder.of(Paths.get(ModuleDescriptorTest.class.getResource("/modules").toURI()));
-	}
+  public static ModuleFinder getModuleFinder() throws URISyntaxException {
+    return ModuleFinder.of(
+        Paths.get(
+            ModuleDescriptorTest.class.getResource("/modules").toURI()));
+  }
 
-	public static ModuleReference getModuleReference() throws URISyntaxException {
-		return getModuleFinder().find(MODULE_NAME).get();
-	}
+  public static ModuleReference getModuleReference() throws URISyntaxException {
+    return getModuleFinder().find(MODULE_NAME).get();
+  }
 }

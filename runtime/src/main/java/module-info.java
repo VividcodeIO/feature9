@@ -1,3 +1,3 @@
 module feature.runtime {
-	requires feature.logging;
+  requires feature.logging;
 }

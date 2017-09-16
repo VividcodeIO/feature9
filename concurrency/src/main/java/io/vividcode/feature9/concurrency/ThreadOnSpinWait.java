@@ -44,7 +44,7 @@ public class ThreadOnSpinWait {
   }
 
   private static class SpinWaitTask extends Task {
-    
+
     @Override
     public void run() {
       while (!this.canStart) {
