@@ -22,7 +22,8 @@ public class SLF4JLoggerFinder extends System.LoggerFinder {
   @Override
   public System.Logger getLogger(final String name, final Module module) {
     checkPermission();
-    final Logger logger = LoggerFactory.getLogger(String.format("%s/%s", module.getName(), name));
+    final Logger logger = LoggerFactory
+        .getLogger(String.format("%s/%s", module.getName(), name));
     return new SLF4JLoggerWrapper(logger);
   }
 }

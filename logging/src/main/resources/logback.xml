@@ -2,7 +2,7 @@
 <configuration scan="true">
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>%d | %5.5level [%20.20thread] %50.50logger{50} : %msg%n</pattern>
+      <pattern>%d | %5.5level [%10.10thread] %20.20logger{20} : %msg%n</pattern>
     </encoder>
   </appender>
   <root level="ALL">

@@ -39,16 +39,20 @@ public class SLF4JLoggerWrapper implements System.Logger {
   @Override
   public void log(final Level level, final ResourceBundle bundle,
       final String msg, final Throwable thrown) {
-    this.doLog(level, formatMessage(bundle, msg), thrown);
+    this.doLog(level, localizedMessage(bundle, msg), thrown);
   }
 
   @Override
   public void log(final Level level, final ResourceBundle bundle,
       final String format, final Object... params) {
-    this.doLog(level, String.format(formatMessage(bundle, format), params), null);
+    this.doLog(level,
+        String.format(localizedMessage(bundle, format), params),
+        null);
   }
 
-  private void doLog(final Level level, final String msg, final Throwable thrown) {
+  private void doLog(final Level level,
+      final String msg,
+      final Throwable thrown) {
     switch (level) {
       case ALL:
       case TRACE:
@@ -64,12 +68,13 @@ public class SLF4JLoggerWrapper implements System.Logger {
         this.logger.warn(msg, thrown);
         break;
       case ERROR:
-        this.logger.warn(msg, thrown);
+        this.logger.error(msg, thrown);
         break;
     }
   }
 
-  private String formatMessage(final ResourceBundle resourceBundle, final String msg) {
+  private String localizedMessage(final ResourceBundle resourceBundle,
+      final String msg) {
     if (resourceBundle != null) {
       try {
         return resourceBundle.getString(msg);
