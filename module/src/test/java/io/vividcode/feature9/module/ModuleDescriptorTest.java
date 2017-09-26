@@ -22,10 +22,25 @@ public class ModuleDescriptorTest {
     assertFalse(descriptor.isAutomatic());
     assertFalse(descriptor.isOpen());
     assertEquals(1, descriptor.exports().size());
-    assertEquals(1, descriptor.packages().size());
+    assertEquals(2, descriptor.packages().size());
     assertTrue(descriptor.requires().stream().map(Requires::name)
         .anyMatch(Predicate.isEqual("jackson.core")));
     assertTrue(descriptor.uses().isEmpty());
     assertTrue(descriptor.provides().isEmpty());
+  }
+
+  @Test
+  public void testModuleDescriptorBuilder() {
+    final ModuleDescriptor descriptor = ModuleDescriptor.newModule("demo")
+        .exports("demo.api")
+        .exports("demo.common")
+        .mainClass("demo.Main")
+        .version("1.0.0")
+        .build();
+    assertEquals(2, descriptor.exports().size());
+    assertTrue(descriptor.mainClass().isPresent());
+    assertEquals("demo.Main", descriptor.mainClass().get());
+    assertTrue(descriptor.version().isPresent());
+    assertEquals("1.0.0", descriptor.version().get().toString());
   }
 }

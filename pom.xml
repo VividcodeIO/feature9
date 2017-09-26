@@ -23,6 +23,9 @@
     <module>stream</module>
     <module>io</module>
     <module>module</module>
+    <module>ui</module>
+    <module>security</module>
+    <module>misc</module>
   </modules>
 
   <dependencies>
