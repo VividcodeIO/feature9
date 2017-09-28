@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
-public class DesktopFeature {
+public class SystemEventsDemo {
 
   private static class MainFrame extends JFrame {
 
