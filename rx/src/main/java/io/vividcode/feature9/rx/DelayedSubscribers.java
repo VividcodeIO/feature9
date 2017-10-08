@@ -38,8 +38,7 @@ public class DelayedSubscribers {
             1000,
             TimeUnit.MILLISECONDS,
             ((subscriber, value) -> {
-              System.out.printf("%s dropped %s%n",
-                  subscriber, value);
+              System.out.printf("%s dropped %s%n", subscriber, value);
               return true;
             })
         ));
