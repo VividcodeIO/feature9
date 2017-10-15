@@ -1,4 +1,4 @@
-# Feature9
+# Java 9 new features
 
 ![build status](https://circleci.com/gh/VividcodeIO/feature9.png)
 
